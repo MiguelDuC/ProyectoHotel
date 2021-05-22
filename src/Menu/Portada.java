@@ -28,6 +28,7 @@ public class Portada extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonPaso = new javax.swing.JButton();
+        jButtonMusic = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,6 +39,8 @@ public class Portada extends javax.swing.JFrame {
             }
         });
 
+        jButtonMusic.setText("Music");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -46,13 +49,19 @@ public class Portada extends javax.swing.JFrame {
                 .addContainerGap(301, Short.MAX_VALUE)
                 .addComponent(jButtonPaso)
                 .addGap(24, 24, 24))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButtonMusic)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(239, Short.MAX_VALUE)
                 .addComponent(jButtonPaso)
-                .addGap(38, 38, 38))
+                .addGap(4, 4, 4)
+                .addComponent(jButtonMusic)
+                .addContainerGap())
         );
 
         pack();
@@ -101,6 +110,7 @@ public class Portada extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonMusic;
     private javax.swing.JButton jButtonPaso;
     // End of variables declaration//GEN-END:variables
 }

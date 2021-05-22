@@ -25,13 +25,12 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jButtonOut" max="32767" attributes="0"/>
-                      <Component id="jButtonIn" max="32767" attributes="0"/>
-                      <Component id="jButtonMapaHotel" max="32767" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jButtonOut" max="32767" attributes="0"/>
+                  <Component id="jButtonIn" max="32767" attributes="0"/>
+                  <Component id="jButtonMapaHotel" max="32767" attributes="0"/>
                   <Component id="jButtonMusic" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonConsultas" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="287" max="32767" attributes="0"/>
           </Group>
@@ -46,9 +45,11 @@
               <Component id="jButtonOut" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jButtonMapaHotel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="135" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jButtonConsultas" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="109" max="32767" attributes="0"/>
               <Component id="jButtonMusic" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -58,6 +59,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Check-In"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonInActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonOut">
       <Properties>
@@ -72,6 +76,11 @@
     <Component class="javax.swing.JButton" name="jButtonMusic">
       <Properties>
         <Property name="text" type="java.lang.String" value="Music"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonConsultas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Consultas"/>
       </Properties>
     </Component>
   </SubComponents>

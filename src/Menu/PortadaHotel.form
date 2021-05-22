@@ -32,14 +32,12 @@
                           <Component id="jLabelUsuario" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextFieldUsuario" min="-2" pref="101" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="jTextFieldContraseña" min="-2" pref="101" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButtonIngresar" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jTextFieldUsuario" pref="101" max="32767" attributes="0"/>
+                          <Component id="jPasswordFieldContra" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="jButtonIngresar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -61,8 +59,8 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextFieldContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonIngresar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPasswordFieldContra" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Component id="jButtonMusic" min="-2" max="-2" attributes="0"/>
@@ -95,15 +93,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldUsuarioActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldContrase&#xf1;a">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldContrase&#xf1;aActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="jButtonMusic">
       <Properties>
         <Property name="text" type="java.lang.String" value="Music"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="jPasswordFieldContra">
     </Component>
   </SubComponents>
 </Form>

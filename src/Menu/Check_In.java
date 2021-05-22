@@ -5,6 +5,11 @@
  */
 package Menu;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Miguel
@@ -14,8 +19,12 @@ public class Check_In extends javax.swing.JFrame {
     /**
      * Creates new form Check_In
      */
+        /* FondoPanel fondo=new FondoPanel();*/
     public Check_In() {
+        
+   
         initComponents();
+            // this.setContentPane(fondo);
        this.jCheckBoxHab101.setVisible(false);
        this.jCheckBoxHab102.setVisible(false);
        this.jCheckBoxHab103.setVisible(false);
@@ -46,6 +55,8 @@ public class Check_In extends javax.swing.JFrame {
        this.jCheckBoxHab128.setVisible(false);
        this.jCheckBoxHab129.setVisible(false);
        this.jCheckBoxHab130.setVisible(false);
+       this.jPanelDisp.setVisible(false);
+       this.jPanelOcup.setVisible(false);
     }
 
     /**
@@ -113,8 +124,8 @@ public class Check_In extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabelDisponible = new javax.swing.JLabel();
-        jLabelOcupado = new javax.swing.JLabel();
+        jPanelDisp = new javax.swing.JPanel();
+        jPanelOcup = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -283,11 +294,33 @@ public class Check_In extends javax.swing.JFrame {
 
         jLabel7.setText("$1000");
 
-        jLabel8.setText("Disponible");
+        jLabel8.setText("Disponible:");
 
-        jLabelDisponible.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/accept.png"))); // NOI18N
+        jPanelDisp.setBackground(new java.awt.Color(102, 255, 0));
 
-        jLabelOcupado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cancel.png"))); // NOI18N
+        javax.swing.GroupLayout jPanelDispLayout = new javax.swing.GroupLayout(jPanelDisp);
+        jPanelDisp.setLayout(jPanelDispLayout);
+        jPanelDispLayout.setHorizontalGroup(
+            jPanelDispLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 19, Short.MAX_VALUE)
+        );
+        jPanelDispLayout.setVerticalGroup(
+            jPanelDispLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
+        jPanelOcup.setBackground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout jPanelOcupLayout = new javax.swing.GroupLayout(jPanelOcup);
+        jPanelOcup.setLayout(jPanelOcupLayout);
+        jPanelOcupLayout.setHorizontalGroup(
+            jPanelOcupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 19, Short.MAX_VALUE)
+        );
+        jPanelOcupLayout.setVerticalGroup(
+            jPanelOcupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -310,14 +343,14 @@ public class Check_In extends javax.swing.JFrame {
                                     .addComponent(jCheckBoxDoble)
                                     .addComponent(jCheckBoxTriple))
                                 .addGap(40, 40, 40)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(jCheckBoxHab104)
                                         .addGap(18, 18, 18)
                                         .addComponent(jCheckBoxHab110)
                                         .addGap(18, 18, 18)
                                         .addComponent(jCheckBoxHab115))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jCheckBoxHab103)
@@ -342,8 +375,8 @@ public class Check_In extends javax.swing.JFrame {
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jCheckBoxHab111))
                                             .addComponent(jCheckBoxHab106))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                     .addComponent(jLabel1)
@@ -354,52 +387,55 @@ public class Check_In extends javax.swing.JFrame {
                                                 .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel8)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabelDisponible)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jLabelOcupado))))))
-                            .addComponent(jLabelPiso2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jPanelDisp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jPanelOcup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(53, 53, 53))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBoxSencilla2)
-                                    .addComponent(jCheckBoxDoble2)
-                                    .addComponent(jCheckBoxTriple2))
-                                .addGap(29, 29, 29)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelPiso2)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBoxHab118)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCheckBoxHab122)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCheckBoxHab127))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBoxHab119)
-                                        .addGap(18, 18, 18)
+                                        .addGap(2, 2, 2)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jCheckBoxSencilla2)
+                                            .addComponent(jCheckBoxDoble2)
+                                            .addComponent(jCheckBoxTriple2))
+                                        .addGap(29, 29, 29)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBoxHab123)
+                                                .addComponent(jCheckBoxHab118)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jCheckBoxHab128))
+                                                .addComponent(jCheckBoxHab122)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jCheckBoxHab127))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBoxHab124)
+                                                .addComponent(jCheckBoxHab119)
                                                 .addGap(18, 18, 18)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jCheckBoxHab130)
-                                                    .addComponent(jCheckBoxHab129)))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBoxHab116)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCheckBoxHab120)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCheckBoxHab125))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jCheckBoxHab117)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCheckBoxHab121)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCheckBoxHab126)))))
-                        .addGap(18, 18, 18)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jCheckBoxHab123)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(jCheckBoxHab128))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jCheckBoxHab124)
+                                                        .addGap(18, 18, 18)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jCheckBoxHab130)
+                                                            .addComponent(jCheckBoxHab129)))))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jCheckBoxHab116)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jCheckBoxHab120)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jCheckBoxHab125))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jCheckBoxHab117)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jCheckBoxHab121)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jCheckBoxHab126)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
@@ -409,34 +445,80 @@ public class Check_In extends javax.swing.JFrame {
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel2, jLabel3, jLabel4});
 
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jPanelDisp, jPanelOcup});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabelPiso1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBoxSencilla)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBoxDoble)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBoxTriple)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBoxHab106)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelPiso2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBoxSencilla2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBoxDoble2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBoxTriple2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(159, 159, 159)
+                                .addComponent(jLabelPiso2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jCheckBoxSencilla2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckBoxDoble2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckBoxTriple2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jPanelDisp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jCheckBoxHab101)
+                                            .addComponent(jCheckBoxHab107)
+                                            .addComponent(jCheckBoxHab112)
+                                            .addComponent(jLabel1)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel5))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jCheckBoxHab102)
+                                            .addComponent(jCheckBoxHab108)
+                                            .addComponent(jCheckBoxHab113)
+                                            .addComponent(jLabel3)
+                                            .addComponent(jLabel6))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jCheckBoxHab103)
+                                            .addComponent(jCheckBoxHab109)
+                                            .addComponent(jCheckBoxHab114)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel4))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jCheckBoxHab104)
+                                            .addComponent(jCheckBoxHab110)
+                                            .addComponent(jCheckBoxHab115))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(2, 2, 2)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                    .addComponent(jCheckBoxHab105)
+                                                    .addComponent(jCheckBoxHab111)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jLabel8))))
+                                    .addComponent(jPanelOcup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonMusic)
                             .addComponent(jButtonRegresar)))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabelPiso1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBoxSencilla)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCheckBoxDoble)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCheckBoxTriple)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCheckBoxHab106)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jCheckBoxHab116)
                             .addComponent(jCheckBoxHab120)
@@ -464,47 +546,9 @@ public class Check_In extends javax.swing.JFrame {
                         .addComponent(jCheckBoxHab130)
                         .addGap(0, 58, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxHab101)
-                    .addComponent(jCheckBoxHab107)
-                    .addComponent(jCheckBoxHab112)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxHab102)
-                    .addComponent(jCheckBoxHab108)
-                    .addComponent(jCheckBoxHab113)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxHab103)
-                    .addComponent(jCheckBoxHab109)
-                    .addComponent(jCheckBoxHab114)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxHab104)
-                    .addComponent(jCheckBoxHab110)
-                    .addComponent(jCheckBoxHab115))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBoxHab105)
-                            .addComponent(jCheckBoxHab111)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabelDisponible)
-                            .addComponent(jLabelOcupado)))))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jPanelDisp, jPanelOcup});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -810,9 +854,21 @@ public class Check_In extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabelDisponible;
-    private javax.swing.JLabel jLabelOcupado;
     private javax.swing.JLabel jLabelPiso1;
     private javax.swing.JLabel jLabelPiso2;
+    private javax.swing.JPanel jPanelDisp;
+    private javax.swing.JPanel jPanelOcup;
     // End of variables declaration//GEN-END:variables
+   /* class FondoPanel extends JPanel{
+        private Image imagen;
+        @Override
+        public void paint(Graphics g){
+           imagen= new ImageIcon(getClass().getResource("/imagenes/fondo.jpg")).getImage();
+           g.drawImage(imagen, 0, 0, getWidth(),getHeight(), this);
+           setOpaque(false);
+           super.paint(g);
+        }
+    }*/
+    
 }
+

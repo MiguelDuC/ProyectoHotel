@@ -27,7 +27,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
         jButtonIn = new javax.swing.JButton();
         jButtonOut = new javax.swing.JButton();
         jButtonMapaHotel = new javax.swing.JButton();
@@ -35,8 +34,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButtonConsultas = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jButtonServicios = new javax.swing.JButton();
-
-        jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -184,6 +181,5 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonOut;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JButton jButtonServicios;
-    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

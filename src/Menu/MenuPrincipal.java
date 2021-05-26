@@ -71,6 +71,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         jButtonServicios.setText("Servicios");
+        jButtonServicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonServiciosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,6 +146,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(WIDTH);
     }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jButtonServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonServiciosActionPerformed
+        // TODO add your handling code here:
+        Servicios abrir=new Servicios();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonServiciosActionPerformed
 
     /**
      * @param args the command line arguments

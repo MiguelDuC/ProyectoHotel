@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Menu;
+import java.applet.AudioClip;
 
 /**
  *
@@ -16,6 +17,7 @@ public class Portada extends javax.swing.JFrame {
      */
     public Portada() {
         initComponents();
+
     }
 
     /**
@@ -28,7 +30,9 @@ public class Portada extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonPaso = new javax.swing.JButton();
-        jButtonMusic = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButtonStar = new javax.swing.JButton();
+        jButtonStop = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,7 +43,21 @@ public class Portada extends javax.swing.JFrame {
             }
         });
 
-        jButtonMusic.setText("Music");
+        jLabel1.setText("Music");
+
+        jButtonStar.setText("Star");
+        jButtonStar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonStarMouseClicked(evt);
+            }
+        });
+        jButtonStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonStarActionPerformed(evt);
+            }
+        });
+
+        jButtonStop.setText("Stop");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -51,17 +69,24 @@ public class Portada extends javax.swing.JFrame {
                 .addGap(24, 24, 24))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButtonMusic)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonStar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonStop)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(239, Short.MAX_VALUE)
+                .addContainerGap(235, Short.MAX_VALUE)
                 .addComponent(jButtonPaso)
-                .addGap(4, 4, 4)
-                .addComponent(jButtonMusic)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jButtonStar)
+                    .addComponent(jButtonStop))
+                .addGap(8, 8, 8))
         );
 
         pack();
@@ -73,6 +98,18 @@ public class Portada extends javax.swing.JFrame {
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonPasoActionPerformed
+
+    private void jButtonStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStarActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jButtonStarActionPerformed
+
+    private void jButtonStarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonStarMouseClicked
+        // TODO add your handling code here:
+        AudioClip sonido;
+        sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Hotel/src/music/audio.wav"));
+        sonido.play();
+    }//GEN-LAST:event_jButtonStarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -107,10 +144,13 @@ public class Portada extends javax.swing.JFrame {
                 new Portada().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonMusic;
     private javax.swing.JButton jButtonPaso;
+    private javax.swing.JButton jButtonStar;
+    private javax.swing.JButton jButtonStop;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

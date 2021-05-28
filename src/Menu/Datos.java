@@ -10,10 +10,14 @@ package Menu;
  * @author Miguel
  */
 public class Datos extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Datos
-     */
+     MySqlConn objconn=new  MySqlConn();
+       MySqlConn conn; 
+     public Datos(MySqlConn conn){
+         
+        this.conn=conn;
+        initComponents();
+           
+    }
     public Datos() {
         initComponents();
     }

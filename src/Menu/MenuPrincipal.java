@@ -11,6 +11,8 @@ import java.applet.AudioClip;
  * @author Miguel
  */
 public class MenuPrincipal extends javax.swing.JFrame {
+        MySqlConn objconn=new  MySqlConn();
+
 
     /**
      * Creates new form MenuPrincipal
@@ -131,9 +133,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jButtonInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInActionPerformed
         // TODO add your handling code here:
-        Check_In abrir=new Check_In();
-        abrir.setVisible(true);
-        this.setVisible(false);
+     new Check_In(objconn).setVisible(true);
     }//GEN-LAST:event_jButtonInActionPerformed
 
     private void jButtonOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutActionPerformed

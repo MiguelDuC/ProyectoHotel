@@ -15,6 +15,7 @@ public class Portada extends javax.swing.JFrame {
     /**
      * Creates new form Portada
      */
+     MySqlConn objconn=new  MySqlConn();
     public Portada() {
         initComponents();
 
@@ -94,8 +95,7 @@ public class Portada extends javax.swing.JFrame {
 
     private void jButtonPasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPasoActionPerformed
         // TODO add your handling code here:
-        PortadaHotel abrir=new PortadaHotel();
-        abrir.setVisible(true);
+        new PortadaHotel(objconn).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonPasoActionPerformed
 

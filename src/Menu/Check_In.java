@@ -23,51 +23,55 @@ import com.itextpdf.text.pdf.PdfWriter;
  * @author Miguel
  */
 public class Check_In extends javax.swing.JFrame {
-
+     MySqlConn objconn=new  MySqlConn();
+     MySqlConn conn; 
+    public Check_In(MySqlConn conn){
+        this.conn=conn;
+        initComponents();
+        this.jCheckBoxHab101.setVisible(false);
+        this.jCheckBoxHab102.setVisible(false);
+        this.jCheckBoxHab103.setVisible(false);
+        this.jCheckBoxHab104.setVisible(false);
+        this.jCheckBoxHab105.setVisible(false);
+        this.jCheckBoxHab106.setVisible(false);
+        this.jCheckBoxHab107.setVisible(false);
+        this.jCheckBoxHab108.setVisible(false);
+        this.jCheckBoxHab109.setVisible(false);
+        this.jCheckBoxHab110.setVisible(false);
+        this.jCheckBoxHab111.setVisible(false);
+        this.jCheckBoxHab112.setVisible(false);
+        this.jCheckBoxHab113.setVisible(false);
+        this.jCheckBoxHab114.setVisible(false);
+        this.jCheckBoxHab115.setVisible(false);
+        this.jCheckBoxHab116.setVisible(false);
+        this.jCheckBoxHab117.setVisible(false);
+        this.jCheckBoxHab118.setVisible(false);
+        this.jCheckBoxHab119.setVisible(false);
+        this.jCheckBoxHab120.setVisible(false);
+        this.jCheckBoxHab121.setVisible(false);
+        this.jCheckBoxHab122.setVisible(false);
+        this.jCheckBoxHab123.setVisible(false);
+        this.jCheckBoxHab124.setVisible(false);
+        this.jCheckBoxHab125.setVisible(false);
+        this.jCheckBoxHab126.setVisible(false);
+        this.jCheckBoxHab127.setVisible(false);
+        this.jCheckBoxHab128.setVisible(false);
+        this.jCheckBoxHab129.setVisible(false);
+        this.jCheckBoxHab130.setVisible(false);
+        this.jPanelDisp.setVisible(false);
+        this.jPanelOcup.setVisible(false);
+        this.jLabelOcup.setVisible(false);
+        this.jCheckBox1P.setVisible(false);
+        this.jCheckBox2P.setVisible(false); 
+    }
     /**
      * Creates new form Check_In
      */
         // FondoPanel fondo=new FondoPanel();
     public Check_In() {
-        
-   
         initComponents();
      // this.setContentPane(fondo);
-       this.jCheckBoxHab101.setVisible(false);
-       this.jCheckBoxHab102.setVisible(false);
-       this.jCheckBoxHab103.setVisible(false);
-       this.jCheckBoxHab104.setVisible(false);
-       this.jCheckBoxHab105.setVisible(false);
-       this.jCheckBoxHab106.setVisible(false);
-       this.jCheckBoxHab107.setVisible(false);
-       this.jCheckBoxHab108.setVisible(false);
-       this.jCheckBoxHab109.setVisible(false);
-       this.jCheckBoxHab110.setVisible(false);
-       this.jCheckBoxHab111.setVisible(false);
-       this.jCheckBoxHab112.setVisible(false);
-       this.jCheckBoxHab113.setVisible(false);
-       this.jCheckBoxHab114.setVisible(false);
-       this.jCheckBoxHab115.setVisible(false);
-       this.jCheckBoxHab116.setVisible(false);
-       this.jCheckBoxHab117.setVisible(false);
-       this.jCheckBoxHab118.setVisible(false);
-       this.jCheckBoxHab119.setVisible(false);
-       this.jCheckBoxHab120.setVisible(false);
-       this.jCheckBoxHab121.setVisible(false);
-       this.jCheckBoxHab122.setVisible(false);
-       this.jCheckBoxHab123.setVisible(false);
-       this.jCheckBoxHab124.setVisible(false);
-       this.jCheckBoxHab125.setVisible(false);
-       this.jCheckBoxHab126.setVisible(false);
-       this.jCheckBoxHab127.setVisible(false);
-       this.jCheckBoxHab128.setVisible(false);
-       this.jCheckBoxHab129.setVisible(false);
-       this.jCheckBoxHab130.setVisible(false);
-       this.jPanelDisp.setVisible(false);
-       this.jPanelOcup.setVisible(false);
-       this.jLabelOcup.setVisible(false);
-       this.jCheckBox1P.setVisible(false);
-       this.jCheckBox2P.setVisible(false);
+       
     
     }
 
@@ -1200,8 +1204,7 @@ public class Check_In extends javax.swing.JFrame {
 
     private void jButtonRentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRentarActionPerformed
         // TODO add your handling code here:
-        Datos abrir=new Datos();
-        abrir.setVisible(true);
+        new Datos(objconn).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRentarActionPerformed
 

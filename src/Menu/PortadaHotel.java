@@ -5,11 +5,24 @@
  */
 package Menu;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import org.apache.commons.codec.digest.DigestUtils;
+
 /**
  *
  * @author Miguel
  */
 public class PortadaHotel extends javax.swing.JFrame {
+        MySqlConn objconn=new  MySqlConn();
+        MySqlConn conn;
+    
+    public PortadaHotel(MySqlConn conn){
+        this.conn=conn;
+         initComponents();
+    }
 
     /**
      * Creates new form PortadaHotel
@@ -114,14 +127,40 @@ public class PortadaHotel extends javax.swing.JFrame {
 
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         // TODO add your handling code here:
-        MenuPrincipal abrir=new MenuPrincipal();
-        abrir.setVisible(true);
-        this.setVisible(false);
+        String cuenta,contraseña,query;
+        cuenta=this.jTextFieldUsuario.getText().trim();
+        query="select *from usuarios where cuenta = "+"'"+cuenta+"'";
+        this.conn.Consult(query);
+        try{
+            String contraseñaMySql=this.conn.rs.getString(2);
+            char [] passw=this.jPasswordFieldContra.getPassword();
+            contraseña=new String(passw);
+            String contraseñaencriptada=DigestUtils.md5Hex(contraseña);
+            if(contraseñaMySql.equals(contraseñaencriptada)){
+                 JOptionPane.showMessageDialog(this,"Bienvenido"+this.conn.rs.getString(1)+"al Sistema");
+                    MenuPrincipal abrir=new  MenuPrincipal();
+                    abrir.setVisible(true);
+                     this.setVisible(false);
+
+            }
+            else{
+               JOptionPane.showMessageDialog(this,"Error en la contraseña"); 
+            }
+        }   catch (SQLException ex) {
+                 JOptionPane.showMessageDialog(this,"No existe la cuenta");
+                 
+            
+            }
+        
+        
     }//GEN-LAST:event_jButtonIngresarActionPerformed
 
     private void jButtonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistroActionPerformed
         // TODO add your handling code here:
         
+        
+         new Registro(objconn).setVisible(true);
+         this.setVisible(false);
     }//GEN-LAST:event_jButtonRegistroActionPerformed
 
     /**

@@ -62,6 +62,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButtonMusic.setText("Music");
 
         jButtonConsultas.setText("Consultas");
+        jButtonConsultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConsultasActionPerformed(evt);
+            }
+        });
 
         jButtonSalir.setText("Salir");
         jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -153,6 +158,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonServiciosActionPerformed
+
+    private void jButtonConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultasActionPerformed
+        // TODO add your handling code here:
+        Consultas abrir=new Consultas();
+        abrir.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonConsultasActionPerformed
 
     /**
      * @param args the command line arguments

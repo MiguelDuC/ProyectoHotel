@@ -10,6 +10,14 @@ package Menu;
  * @author Miguel
  */
 public class Consultas extends javax.swing.JFrame {
+      MySqlConn objconn=new  MySqlConn();
+      MySqlConn conn; 
+     public Consultas(MySqlConn conn){
+         
+        this.conn=conn;
+        initComponents();
+           
+    }
 
     /**
      * Creates new form Consultas
@@ -36,6 +44,11 @@ public class Consultas extends javax.swing.JFrame {
         jButtonImagens.setText("Imagenes del Hotel");
 
         jButton2.setText("Registro del Hotel");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Regresar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +98,12 @@ public class Consultas extends javax.swing.JFrame {
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new IngresoRegistro(objconn).setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

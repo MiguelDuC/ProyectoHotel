@@ -12,9 +12,8 @@ import java.applet.AudioClip;
  */
 public class Portada extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Portada
-     */
+  
+     AudioClip sonido;
      MySqlConn objconn=new  MySqlConn();
     public Portada() {
         initComponents();
@@ -101,14 +100,14 @@ public class Portada extends javax.swing.JFrame {
 
     private void jButtonStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStarActionPerformed
         // TODO add your handling code here:
+        sonido=java.applet.Applet.newAudioClip(getClass().getResource("/music/audio.wav"));
+        sonido.play();
        
     }//GEN-LAST:event_jButtonStarActionPerformed
 
     private void jButtonStarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonStarMouseClicked
         // TODO add your handling code here:
-        AudioClip sonido;
-        sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Hotel/src/music/audio.wav"));
-        sonido.play();
+ 
     }//GEN-LAST:event_jButtonStarMouseClicked
 
     /**

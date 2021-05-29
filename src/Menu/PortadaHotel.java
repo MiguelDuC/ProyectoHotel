@@ -137,7 +137,7 @@ public class PortadaHotel extends javax.swing.JFrame {
             contraseña=new String(passw);
             String contraseñaencriptada=DigestUtils.md5Hex(contraseña);
             if(contraseñaMySql.equals(contraseñaencriptada)){
-                 JOptionPane.showMessageDialog(this,"Bienvenido"+this.conn.rs.getString(1)+"al Sistema");
+                 JOptionPane.showMessageDialog(this,"Bienvenido al Sistema "+this.conn.rs.getString(1));
                     MenuPrincipal abrir=new  MenuPrincipal();
                     abrir.setVisible(true);
                      this.setVisible(false);

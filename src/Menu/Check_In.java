@@ -808,6 +808,8 @@ public class Check_In extends javax.swing.JFrame {
        this.jCheckBoxHab128.setVisible(false);
        this.jCheckBoxHab129.setVisible(false);
        this.jCheckBoxHab130.setVisible(false);
+       
+       
     }//GEN-LAST:event_jCheckBoxSencillaActionPerformed
 
     private void jCheckBoxDobleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxDobleActionPerformed

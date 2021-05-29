@@ -161,9 +161,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jButtonConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultasActionPerformed
         // TODO add your handling code here:
-        Consultas abrir=new Consultas();
-        abrir.setVisible(true);
+        new Consultas(objconn).setVisible(true);
         this.setVisible(false);
+        
     }//GEN-LAST:event_jButtonConsultasActionPerformed
 
     /**

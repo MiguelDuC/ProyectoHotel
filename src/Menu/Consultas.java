@@ -10,6 +10,8 @@ package Menu;
  * @author Miguel
  */
 public class Consultas extends javax.swing.JFrame {
+    
+     
       MySqlConn objconn=new  MySqlConn();
       MySqlConn conn; 
      public Consultas(MySqlConn conn){
@@ -42,6 +44,11 @@ public class Consultas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButtonImagens.setText("Imagenes del Hotel");
+        jButtonImagens.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonImagensActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Registro del Hotel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +111,12 @@ public class Consultas extends javax.swing.JFrame {
         new IngresoRegistro(objconn).setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButtonImagensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImagensActionPerformed
+        // TODO add your handling code here:
+        
+         this.setVisible(false);
+    }//GEN-LAST:event_jButtonImagensActionPerformed
 
     /**
      * @param args the command line arguments

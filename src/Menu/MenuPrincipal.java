@@ -138,13 +138,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jButtonOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutActionPerformed
         // TODO add your handling code here:
-        Check_Out abrir=new Check_Out();
-        abrir.setVisible(true);
-        this.setVisible(false);
+         new Check_Out(objconn).setVisible(true);
     }//GEN-LAST:event_jButtonOutActionPerformed
 
     private void jButtonMapaHotelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMapaHotelActionPerformed
         // TODO add your handling code here:
+         MapaHotel abrir=new  MapaHotel();
+                    abrir.setVisible(true);
+                     this.setVisible(false);
     }//GEN-LAST:event_jButtonMapaHotelActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed

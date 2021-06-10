@@ -14,39 +14,45 @@ public class Check_Out extends javax.swing.JFrame {
     /**
      * Creates new form Check_Out
      */
+     MySqlConn objconn=new  MySqlConn();
+     MySqlConn conn; 
+     public Check_Out(MySqlConn conn){
+        this.conn=conn;
+        initComponents();
+        this.jCheckBoxHab101.setVisible(false);
+        this.jCheckBoxHab102.setVisible(false);
+        this.jCheckBoxHab103.setVisible(false);
+        this.jCheckBoxHab104.setVisible(false);
+        this.jCheckBoxHab105.setVisible(false);
+        this.jCheckBoxHab106.setVisible(false);
+        this.jCheckBoxHab107.setVisible(false);
+        this.jCheckBoxHab108.setVisible(false);
+        this.jCheckBoxHab109.setVisible(false);
+        this.jCheckBoxHab110.setVisible(false);
+        this.jCheckBoxHab111.setVisible(false);
+        this.jCheckBoxHab112.setVisible(false);
+        this.jCheckBoxHab113.setVisible(false);
+        this.jCheckBoxHab114.setVisible(false);
+        this.jCheckBoxHab115.setVisible(false);
+        this.jCheckBoxHab116.setVisible(false);
+        this.jCheckBoxHab117.setVisible(false);
+        this.jCheckBoxHab118.setVisible(false);
+        this.jCheckBoxHab119.setVisible(false);
+        this.jCheckBoxHab120.setVisible(false);
+        this.jCheckBoxHab121.setVisible(false);
+        this.jCheckBoxHab122.setVisible(false);
+        this.jCheckBoxHab123.setVisible(false);
+        this.jCheckBoxHab124.setVisible(false);
+        this.jCheckBoxHab125.setVisible(false);
+        this.jCheckBoxHab126.setVisible(false);
+        this.jCheckBoxHab127.setVisible(false);
+        this.jCheckBoxHab128.setVisible(false);
+        this.jCheckBoxHab129.setVisible(false);
+        this.jCheckBoxHab130.setVisible(false);
+    }
     public Check_Out() {
         initComponents();
-         this.jCheckBoxHab101.setVisible(false);
-       this.jCheckBoxHab102.setVisible(false);
-       this.jCheckBoxHab103.setVisible(false);
-       this.jCheckBoxHab104.setVisible(false);
-       this.jCheckBoxHab105.setVisible(false);
-       this.jCheckBoxHab106.setVisible(false);
-       this.jCheckBoxHab107.setVisible(false);
-       this.jCheckBoxHab108.setVisible(false);
-       this.jCheckBoxHab109.setVisible(false);
-       this.jCheckBoxHab110.setVisible(false);
-       this.jCheckBoxHab111.setVisible(false);
-       this.jCheckBoxHab112.setVisible(false);
-       this.jCheckBoxHab113.setVisible(false);
-       this.jCheckBoxHab114.setVisible(false);
-       this.jCheckBoxHab115.setVisible(false);
-       this.jCheckBoxHab116.setVisible(false);
-       this.jCheckBoxHab117.setVisible(false);
-       this.jCheckBoxHab118.setVisible(false);
-       this.jCheckBoxHab119.setVisible(false);
-       this.jCheckBoxHab120.setVisible(false);
-       this.jCheckBoxHab121.setVisible(false);
-       this.jCheckBoxHab122.setVisible(false);
-       this.jCheckBoxHab123.setVisible(false);
-       this.jCheckBoxHab124.setVisible(false);
-       this.jCheckBoxHab125.setVisible(false);
-       this.jCheckBoxHab126.setVisible(false);
-       this.jCheckBoxHab127.setVisible(false);
-       this.jCheckBoxHab128.setVisible(false);
-       this.jCheckBoxHab129.setVisible(false);
-       this.jCheckBoxHab130.setVisible(false);
-        
+       
     }
 
     /**

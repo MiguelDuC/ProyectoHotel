@@ -5,19 +5,25 @@
  */
 package Menu;
 import java.applet.AudioClip;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Miguel
  */
 public class Portada extends javax.swing.JFrame {
+    
 
-  
      AudioClip sonido;
      MySqlConn objconn=new  MySqlConn();
+    // FondoPanel fondo=new FondoPanel();
     public Portada() {
+       // this.setContentPane(fondo);
         initComponents();
-
+        
     }
 
     /**
@@ -33,8 +39,16 @@ public class Portada extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButtonStar = new javax.swing.JButton();
         jButtonStop = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Hotel");
+        setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
         jButtonPaso.setText("Siguente");
         jButtonPaso.addActionListener(new java.awt.event.ActionListener() {
@@ -45,7 +59,7 @@ public class Portada extends javax.swing.JFrame {
 
         jLabel1.setText("Music");
 
-        jButtonStar.setText("Star");
+        jButtonStar.setText("Start");
         jButtonStar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonStarMouseClicked(evt);
@@ -59,39 +73,96 @@ public class Portada extends javax.swing.JFrame {
 
         jButtonStop.setText("Stop");
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGOBENEMERITA_CIRCULAR.png"))); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 2, 36)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("PROGRAMACION III ");
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 2, 18)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Maestra:Georgina Salazar Partida");
+
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 2, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Integrante 1:Miguel Angel Dueñas Cervantes ");
+
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 2, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Integrante 2: Iñaki Nathan Martinez Marin");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(301, Short.MAX_VALUE)
-                .addComponent(jButtonPaso)
-                .addGap(24, 24, 24))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(19, 19, 19)
                 .addComponent(jButtonStar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButtonStop)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 529, Short.MAX_VALUE)
+                .addComponent(jButtonPaso)
+                .addGap(19, 19, 19))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(267, 267, 267)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(226, 226, 226))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel2, jLabel4, jLabel5, jLabel6});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(235, Short.MAX_VALUE)
-                .addComponent(jButtonPaso)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButtonStar)
-                    .addComponent(jButtonStop))
-                .addGap(8, 8, 8))
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtonPaso)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonStar)
+                            .addComponent(jLabel1)
+                            .addComponent(jButtonStop))
+                        .addGap(21, 21, 21))))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel2, jLabel4, jLabel5, jLabel6});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+     /*class FondoPanel extends JPanel{
+        private Image imagen;
+        @Override
+        public void paint(Graphics g){
+           imagen= new ImageIcon(getClass().getResource("src/imagenes/fondo.jpg")).getImage();
+           g.drawImage(imagen, 0, 0, getWidth(),getHeight(), this);
+           setOpaque(false);
+           super.paint(g);
+        }
+    }*/
     private void jButtonPasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPasoActionPerformed
         // TODO add your handling code here:
         new PortadaHotel(objconn).setVisible(true);
@@ -107,7 +178,9 @@ public class Portada extends javax.swing.JFrame {
 
     private void jButtonStarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonStarMouseClicked
         // TODO add your handling code here:
- 
+         sonido=java.applet.Applet.newAudioClip(getClass().getResource("/music/audio.wav"));
+        sonido.play();
+       
     }//GEN-LAST:event_jButtonStarMouseClicked
 
     /**
@@ -151,5 +224,10 @@ public class Portada extends javax.swing.JFrame {
     private javax.swing.JButton jButtonStar;
     private javax.swing.JButton jButtonStop;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }

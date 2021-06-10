@@ -5,16 +5,15 @@
  */
 package Menu;
 
+import java.awt.Image;
+
 /**
  *
  * @author Miguel
  */
 public class Menu {
-   // MySqlConn objConn=new  MySqlConn();
     
-    public Menu(){
-       // new Registro(objConn).setVisible(true);
-    }
+    
     public static void main(String[] args) {
         Portada portada=new Portada();
         portada.setVisible(true);

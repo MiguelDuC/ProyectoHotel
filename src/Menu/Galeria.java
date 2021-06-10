@@ -5,17 +5,28 @@
  */
 package Menu;
 
+import javax.swing.ImageIcon;
+
+
 /**
  *
  * @author Miguel
  */
 public class Galeria extends javax.swing.JFrame {
+    
+    ImageIcon Imagen[]=new ImageIcon[11];
+    int contador=1;
 
     /**
      * Creates new form Galeria
      */
     public Galeria() {
         initComponents();
+        this.setTitle("Coleccion de Fotos");
+        for (int i = 0; i < 11; i++) {
+            Imagen[i]=new ImageIcon(getClass().getResource("/visor/font-"+i+".jpg"));
+        }
+        jLabel1.setIcon(Imagen[1]);
     }
 
     /**
@@ -41,9 +52,19 @@ public class Galeria extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 100, 778, 458));
 
         jButton1.setText("Regresar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 596, -1, -1));
 
         jButton2.setText("Siguiente");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 596, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoImagen.jpg"))); // NOI18N
@@ -52,6 +73,24 @@ public class Galeria extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        if(contador==11){
+            contador=0;
+        }
+        contador++;
+        jLabel1.setIcon(Imagen[contador]);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if(contador==1){
+            contador=12;
+        }
+        contador--;
+        jLabel1.setIcon(Imagen[contador]);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

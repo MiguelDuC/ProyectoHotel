@@ -114,7 +114,7 @@ public class Consultas extends javax.swing.JFrame {
 
     private void jButtonImagensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImagensActionPerformed
         // TODO add your handling code here:
-        
+        new Galeria().setVisible(true);
          this.setVisible(false);
     }//GEN-LAST:event_jButtonImagensActionPerformed
 

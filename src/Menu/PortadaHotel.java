@@ -47,6 +47,7 @@ public class PortadaHotel extends javax.swing.JFrame {
         jButtonMusic = new javax.swing.JButton();
         jPasswordFieldContra = new javax.swing.JPasswordField();
         jButtonRegistro = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,6 +87,9 @@ public class PortadaHotel extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 475, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoHotel.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondoRegistro.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 550));
@@ -175,6 +179,7 @@ public class PortadaHotel extends javax.swing.JFrame {
     private javax.swing.JButton jButtonMusic;
     private javax.swing.JButton jButtonRegistro;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelContraseña;
     private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JPasswordField jPasswordFieldContra;

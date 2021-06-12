@@ -14,9 +14,9 @@ import java.awt.Image;
 public class Menu {
     
     
+    
     public static void main(String[] args) {
-        Portada portada=new Portada();
-        portada.setVisible(true);
+        new Portada().setVisible(true);
     }
     
 }

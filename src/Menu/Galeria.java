@@ -5,6 +5,7 @@
  */
 package Menu;
 
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
 
@@ -15,6 +16,7 @@ import javax.swing.ImageIcon;
 public class Galeria extends javax.swing.JFrame {
     
     ImageIcon Imagen[]=new ImageIcon[11];
+   // ArrayList<ImagenIcon> listaImagenes=new ArrayList<ImagenIcon>ArrayList();
     int contador=1;
 
     /**
@@ -28,6 +30,8 @@ public class Galeria extends javax.swing.JFrame {
         }
         jLabel1.setIcon(Imagen[1]);
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,6 +45,7 @@ public class Galeria extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,6 +72,14 @@ public class Galeria extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(774, 596, -1, -1));
 
+        jButton3.setText("Menu Principal");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 600, -1, -1));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/FondoImagen.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 650));
@@ -91,6 +104,13 @@ public class Galeria extends javax.swing.JFrame {
         contador--;
         jLabel1.setIcon(Imagen[contador]);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+          MenuPrincipal abrir=new  MenuPrincipal();
+                    abrir.setVisible(true);
+                     this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,6 +150,7 @@ public class Galeria extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

@@ -133,7 +133,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jButtonInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInActionPerformed
         // TODO add your handling code here:
-     new Check_In(objconn).setVisible(true);
+     new Datos(objconn).setVisible(true);
+     this.setVisible(false);
     }//GEN-LAST:event_jButtonInActionPerformed
 
     private void jButtonOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutActionPerformed
@@ -155,9 +156,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jButtonServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonServiciosActionPerformed
         // TODO add your handling code here:
-        Servicios abrir=new Servicios();
-        abrir.setVisible(true);
-        this.setVisible(false);
+       new Servicios(objconn).setVisible(true);
+       this.setVisible(false);
     }//GEN-LAST:event_jButtonServiciosActionPerformed
 
     private void jButtonConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultasActionPerformed

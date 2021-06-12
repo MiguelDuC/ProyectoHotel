@@ -5,6 +5,9 @@
  */
 package Menu;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,16 +15,26 @@ import javax.swing.JOptionPane;
  * @author Miguel
  */
 public class Servicios extends javax.swing.JFrame {
+     MySqlConn objconn=new  MySqlConn();
+      MySqlConn conn; 
+      int costo=0;
+     public Servicios(MySqlConn conn){
+         
+        this.conn=conn;
+        initComponents();
+        this.jLabelCHab.setVisible(false);
+        this.jLabelCMB.setVisible(false);
+        this.jLabelCNi.setVisible(false);
+        this.jLabelCSpa.setVisible(false);
+           
+    }
 
     /**
      * Creates new form Servicios
      */
     public Servicios() {
         initComponents();
-        this.jLabelCHab.setVisible(false);
-        this.jLabelCMB.setVisible(false);
-        this.jLabelCNi.setVisible(false);
-        this.jLabelCSpa.setVisible(false);
+      
     }
 
     /**
@@ -45,7 +58,7 @@ public class Servicios extends javax.swing.JFrame {
         jLabelCMB = new javax.swing.JLabel();
         jButtonRegresar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldHab = new javax.swing.JTextField();
         jButtonAgregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,6 +112,12 @@ public class Servicios extends javax.swing.JFrame {
 
         jLabel3.setText("Agregar a la cuenta de la Hab No");
 
+        jTextFieldHab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldHabActionPerformed(evt);
+            }
+        });
+
         jButtonAgregar.setText("Agregar");
         jButtonAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +160,7 @@ public class Servicios extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldHab, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButtonAgregar)))
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -168,7 +187,7 @@ public class Servicios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldHab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonAgregar))
                 .addGap(45, 45, 45)
                 .addComponent(jButtonRegresar)
@@ -181,26 +200,51 @@ public class Servicios extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
          this.jLabelCSpa.setVisible(true);
+         costo=costo+600;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
           this.jLabelCNi.setVisible(true);
+          costo=costo+300;
           
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
           this.jLabelCHab.setVisible(true);
+             costo=costo+70;
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         this.jLabelCMB.setVisible(true);
+           costo=costo+150;
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
         // TODO add your handling code here:
+        String habitacion;
+        
+        habitacion=this.jTextFieldHab.getText();
+        System.out.println(habitacion);
+        String consul="select * from datos CargoExtra WHERE Hab="+habitacion;
+        this.conn.Consult(consul);
+        
+         try {
+             int total=this.conn.rs.getInt(11);
+             System.out.println(total);
+             costo=costo+total;
+             
+         } catch (SQLException ex) {
+             Logger.getLogger(Servicios.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        
+        String costost=String.valueOf(costo);
+        System.out.println(costost);
+        String query="UPDATE datos SET CargosExtra='"+costost+"' WHERE Hab="+habitacion;
+        int j=this.conn.Update(query);
+        System.out.println("Numero de registos afectados "+j);
         JOptionPane.showMessageDialog(null,"Agregado a la cuenta");
         MenuPrincipal abrir=new MenuPrincipal();
         abrir.setVisible(true);
@@ -213,6 +257,10 @@ public class Servicios extends javax.swing.JFrame {
         abrir.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRegresarActionPerformed
+
+    private void jTextFieldHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldHabActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldHabActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,6 +311,6 @@ public class Servicios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelCMB;
     private javax.swing.JLabel jLabelCNi;
     private javax.swing.JLabel jLabelCSpa;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextFieldHab;
     // End of variables declaration//GEN-END:variables
 }

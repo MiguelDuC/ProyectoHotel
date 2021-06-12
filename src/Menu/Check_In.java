@@ -30,7 +30,7 @@ import javax.swing.table.DefaultTableModel;
 public class Check_In extends javax.swing.JFrame {
      MySqlConn objconn=new  MySqlConn();
      MySqlConn conn; 
-     String auxHab;
+     int auxHab;
     public Check_In(MySqlConn conn){
         this.conn=conn;
         initComponents();
@@ -1158,190 +1158,163 @@ public class Check_In extends javax.swing.JFrame {
 
     private void jCheckBoxHab106ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab106ActionPerformed
         // TODO add your handling code here:
-      
-        
+      auxHab=106;
     }//GEN-LAST:event_jCheckBoxHab106ActionPerformed
 
     private void jCheckBoxHab101ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab101ActionPerformed
         // TODO add your handling code here: 
-       String query="select * from sencilla ORDER BY Hab ASC";
-       String opc="No";
-       this.conn.Consult(query);
-       int n=0;
-       try{
-           this.conn.rs.last();
-           n=this.conn.rs.getRow();
-           this.conn.rs.first();
-       } catch (Exception ex) {
-             System.out.println("Error");
-         }
-       if(n!=0){
-           Object datos[][]=new Object[n][3];
-           
-               try{
-                   //datos[1][0]=this.conn.rs.getInt(1);
-                   //datos[1][1]=this.conn.rs.getString(2);
-                   datos[1][2]=this.conn.rs.getString(3);
-                   auxHab=(String)datos[1][2];
-                   System.out.println(auxHab);
-                   if(auxHab=="No"){
-                       System.out.println("disponible");
-                   }
-               } catch (Exception ex) {
-                   System.out.println("error 2");
-               }
-           
-       }
-        
-      
+       auxHab=101;
     }//GEN-LAST:event_jCheckBoxHab101ActionPerformed
 
     private void jCheckBoxHab102ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab102ActionPerformed
         // TODO add your handling code here:
-        
+       auxHab=102;
     }//GEN-LAST:event_jCheckBoxHab102ActionPerformed
 
     private void jCheckBoxHab103ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab103ActionPerformed
         // TODO add your handling code here:
-      
+      auxHab=103;
     }//GEN-LAST:event_jCheckBoxHab103ActionPerformed
 
     private void jCheckBoxHab104ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab104ActionPerformed
         // TODO add your handling code here:
-       
+       auxHab=104;
     }//GEN-LAST:event_jCheckBoxHab104ActionPerformed
 
     private void jCheckBoxHab105ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab105ActionPerformed
         // TODO add your handling code here:
-     
+     auxHab=105;
     }//GEN-LAST:event_jCheckBoxHab105ActionPerformed
 
     private void jCheckBoxHab107ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab107ActionPerformed
         // TODO add your handling code here:
-      
+      auxHab=107;
     }//GEN-LAST:event_jCheckBoxHab107ActionPerformed
 
     private void jCheckBoxHab108ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab108ActionPerformed
         // TODO add your handling code here:
-      
+      auxHab=108;
     }//GEN-LAST:event_jCheckBoxHab108ActionPerformed
 
     private void jCheckBoxHab109ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab109ActionPerformed
         // TODO add your handling code here:
-       
+       auxHab=109;
     }//GEN-LAST:event_jCheckBoxHab109ActionPerformed
 
     private void jCheckBoxHab110ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab110ActionPerformed
         // TODO add your handling code here:
-       
+       auxHab=110;
     }//GEN-LAST:event_jCheckBoxHab110ActionPerformed
 
     private void jCheckBoxHab111ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab111ActionPerformed
         // TODO add your handling code here:
-       
+       auxHab=111;
     }//GEN-LAST:event_jCheckBoxHab111ActionPerformed
 
     private void jCheckBoxHab112ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab112ActionPerformed
         // TODO add your handling code here:
-       
+       auxHab=112;
     }//GEN-LAST:event_jCheckBoxHab112ActionPerformed
 
     private void jCheckBoxHab113ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab113ActionPerformed
         // TODO add your handling code here:
-      
+      auxHab=113;
     }//GEN-LAST:event_jCheckBoxHab113ActionPerformed
 
     private void jCheckBoxHab114ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab114ActionPerformed
         // TODO add your handling code here:
-       
+       auxHab=114;
     }//GEN-LAST:event_jCheckBoxHab114ActionPerformed
 
     private void jCheckBoxHab115ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab115ActionPerformed
         // TODO add your handling code here:
-       
+       auxHab=115;
     }//GEN-LAST:event_jCheckBoxHab115ActionPerformed
 
     private void jCheckBoxHab116ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab116ActionPerformed
         // TODO add your handling code here:
-      
+      auxHab=116;
     }//GEN-LAST:event_jCheckBoxHab116ActionPerformed
 
     private void jCheckBoxHab117ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab117ActionPerformed
         // TODO add your handling code here:
-        
+        auxHab=117;
     }//GEN-LAST:event_jCheckBoxHab117ActionPerformed
 
     private void jCheckBoxHab118ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab118ActionPerformed
         // TODO add your handling code here:
-        
+        auxHab=118;
     }//GEN-LAST:event_jCheckBoxHab118ActionPerformed
 
     private void jCheckBoxHab119ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab119ActionPerformed
         // TODO add your handling code here:
-        
+        auxHab=119;
     }//GEN-LAST:event_jCheckBoxHab119ActionPerformed
 
     private void jCheckBoxHab120ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab120ActionPerformed
         // TODO add your handling code here:
-      
+      auxHab=120;
     }//GEN-LAST:event_jCheckBoxHab120ActionPerformed
 
     private void jCheckBoxHab121ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab121ActionPerformed
         // TODO add your handling code here:
-       
+       auxHab=121;
     }//GEN-LAST:event_jCheckBoxHab121ActionPerformed
 
     private void jCheckBoxHab122ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab122ActionPerformed
         // TODO add your handling code here:
-       
+       auxHab=122;
     }//GEN-LAST:event_jCheckBoxHab122ActionPerformed
 
     private void jCheckBoxHab123ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab123ActionPerformed
         // TODO add your handling code here:
-     
+     auxHab=123;
     }//GEN-LAST:event_jCheckBoxHab123ActionPerformed
 
     private void jCheckBoxHab124ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab124ActionPerformed
         // TODO add your handling code here:
-       
+       auxHab=124;
     }//GEN-LAST:event_jCheckBoxHab124ActionPerformed
 
     private void jCheckBoxHab125ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab125ActionPerformed
         // TODO add your handling code here:
-        
+        auxHab=125;
     }//GEN-LAST:event_jCheckBoxHab125ActionPerformed
 
     private void jCheckBoxHab126ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab126ActionPerformed
         // TODO add your handling code here:
-        
+        auxHab=126;
     }//GEN-LAST:event_jCheckBoxHab126ActionPerformed
 
     private void jCheckBoxHab127ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab127ActionPerformed
         // TODO add your handling code here:
-     
+     auxHab=127;
     }//GEN-LAST:event_jCheckBoxHab127ActionPerformed
 
     private void jCheckBoxHab128ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab128ActionPerformed
         // TODO add your handling code here:
-      
+      auxHab=128;
     }//GEN-LAST:event_jCheckBoxHab128ActionPerformed
 
     private void jCheckBoxHab129ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab129ActionPerformed
         // TODO add your handling code here:
-       
+       auxHab=129;
     }//GEN-LAST:event_jCheckBoxHab129ActionPerformed
 
     private void jCheckBoxHab130ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHab130ActionPerformed
         // TODO add your handling code here:
-        
+        auxHab=130;
     }//GEN-LAST:event_jCheckBoxHab130ActionPerformed
 
     private void jButtonRentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRentarActionPerformed
         // TODO add your handling code here:
-        if(auxHab=="No"){
+        if(auxHab==101){
             JOptionPane.showMessageDialog(this,"disponible"); 
         }
-        new Datos(objconn).setVisible(true);
+        JOptionPane.showMessageDialog(this,"Generando Recibo"); 
+        MenuPrincipal abrir=new MenuPrincipal();
+        abrir.setVisible(true);
+        this.setVisible(false);
         this.setVisible(false);
     }//GEN-LAST:event_jButtonRentarActionPerformed
 

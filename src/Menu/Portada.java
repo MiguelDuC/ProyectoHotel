@@ -16,6 +16,8 @@ import javax.swing.JPanel;
  */
 public class Portada extends javax.swing.JFrame {
     
+    
+    
 
      AudioClip sonido;
      MySqlConn objconn=new  MySqlConn();
@@ -44,11 +46,13 @@ public class Portada extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hotel");
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonPaso.setText("Siguente");
         jButtonPaso.addActionListener(new java.awt.event.ActionListener() {
@@ -56,8 +60,10 @@ public class Portada extends javax.swing.JFrame {
                 jButtonPasoActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonPaso, new org.netbeans.lib.awtextra.AbsoluteConstraints(714, 560, -1, -1));
 
         jLabel1.setText("Music");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 554, -1, -1));
 
         jButtonStar.setText("Start");
         jButtonStar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -70,85 +76,41 @@ public class Portada extends javax.swing.JFrame {
                 jButtonStarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonStar, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 550, -1, -1));
 
         jButtonStop.setText("Stop");
+        getContentPane().add(jButtonStop, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 550, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LOGOBENEMERITA_CIRCULAR.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(267, 30, 263, 218));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 2, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 0, 5));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("PROGRAMACION III ");
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 276, 408, -1));
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 2, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 0, 3));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Maestra:Georgina Salazar Partida");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 331, 408, 44));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 2, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 21));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Integrante 1:Miguel Angel Dueñas Cervantes ");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 393, -1, 44));
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 2, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Integrante 2: Iñaki Nathan Martinez Marin");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 455, 408, 44));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(19, 19, 19)
-                .addComponent(jButtonStar)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonStop)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 529, Short.MAX_VALUE)
-                .addComponent(jButtonPaso)
-                .addGap(19, 19, 19))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(267, 267, 267)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(226, 226, 226))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel2, jLabel4, jLabel5, jLabel6});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButtonPaso)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonStar)
-                            .addComponent(jLabel1)
-                            .addComponent(jButtonStop))
-                        .addGap(21, 21, 21))))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel2, jLabel4, jLabel5, jLabel6});
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/PortadaFondo.jpg"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -163,6 +125,8 @@ public class Portada extends javax.swing.JFrame {
            super.paint(g);
         }
     }*/
+    
+    
     private void jButtonPasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPasoActionPerformed
         // TODO add your handling code here:
         new PortadaHotel(objconn).setVisible(true);
@@ -229,5 +193,6 @@ public class Portada extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }
